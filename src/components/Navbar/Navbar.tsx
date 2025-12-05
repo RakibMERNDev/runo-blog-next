@@ -1,8 +1,17 @@
 import { LeagueSpartanFont, RobotoFont } from "@/assets/fonts";
 import Link from "next/link";
 import { FaTwitter, FaFacebook, FaYoutube, FaSearch } from "react-icons/fa";
+import MobileMenuToggle from "./MobileMenuToggle";
+import { Dispatch, SetStateAction } from "react";
 
-const Navbar = () => {
+
+const Navbar = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   const navMenu = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
@@ -17,14 +26,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center bg-black/20 px-16 py-7 text-white">
+    <nav className="flex justify-between items-center bg-black/20 px-5 md:px-16 py-7 text-white">
       {/* Logo/Title text */}
       <h2 className={`${LeagueSpartanFont.className} font-bold text-xl`}>
         Runo
       </h2>
       <div className="flex items-center justify-around">
         {/* nav links */}
-        <ul className={`flex gap-6 ${RobotoFont.className} font-medium`}>
+        <ul
+          className={`hidden md:flex gap-6 ${RobotoFont.className} font-medium`}
+        >
           {navMenu.map((item) => (
             <li
               key={item.name}
@@ -35,8 +46,8 @@ const Navbar = () => {
           ))}
         </ul>
         {/* logos */}
-        <div className="border-r-2 h-6 w-px border-white mx-3" />
-        <div className="flex gap-3">
+        <div className="hidden md:flex border-r-2 h-6 w-px border-white mx-3" />
+        <div className="hidden md:flex gap-3">
           {socialLogos.map((logo) => (
             <Link
               key={logo.link}
@@ -49,7 +60,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="border-r-2 h-6 w-px border-white mx-3" />
+        <div className="hidden md:flex border-r-2 h-6 w-px border-white mx-3" />
         {/* search button */}
         <button
           type="button"
@@ -58,6 +69,10 @@ const Navbar = () => {
         >
           <FaSearch size={24} />
         </button>
+      </div>
+      {/* mobile menu */}
+      <div>
+        <MobileMenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </nav>
   );
