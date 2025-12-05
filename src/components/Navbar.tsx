@@ -24,11 +24,11 @@ const Navbar = () => {
       </h2>
       <div className="flex items-center justify-around">
         {/* nav links */}
-        <ul className={`flex gap-6 ${RobotoFont.className} font-medium `}>
+        <ul className={`flex gap-6 ${RobotoFont.className} font-medium`}>
           {navMenu.map((item) => (
             <li
               key={item.name}
-              className="hover:underline-[#D4A373] underline-offset-8  cursor-pointer transition-all duration-300"
+              className="hover:underline hover:decoration-[#D4A373] underline-offset-8 cursor-pointer transition-all duration-300"
             >
               <Link href={item.link}>{item.name}</Link>
             </li>
@@ -37,9 +37,9 @@ const Navbar = () => {
         {/* logos */}
         <div className="border-r-2 h-6 w-px border-white mx-3" />
         <div className="flex gap-3">
-          {socialLogos.map((logo, index) => (
+          {socialLogos.map((logo) => (
             <Link
-              key={index}
+              key={logo.link}
               href={logo.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -51,10 +51,13 @@ const Navbar = () => {
         </div>
         <div className="border-r-2 h-6 w-px border-white mx-3" />
         {/* search button */}
-        <FaSearch
-          size={24}
-          className="hover:text-gray-400 cursor-pointer transition-colors duration-300"
-        />
+        <button
+          type="button"
+          aria-label="Search"
+          className="hover:text-gray-400 cursor-pointer transition-colors duration-300 bg-transparent border-none p-0"
+        >
+          <FaSearch size={24} />
+        </button>
       </div>
     </nav>
   );
