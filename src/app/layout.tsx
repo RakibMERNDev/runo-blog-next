@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LoraFont } from "@/assets/fonts";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/Navbar/NavbarWrapper";
 
 export const metadata: Metadata = {
   title: "Runo Blog",
@@ -15,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${LoraFont.className} container mx-auto`}>
-        <Navbar />
+      <body className={`${LoraFont.className} container mx-auto bg-[#F8F9FA]`}>
+        <NavbarWrapper />
         {children}
       </body>
     </html>
