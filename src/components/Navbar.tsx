@@ -1,0 +1,63 @@
+import { LeagueSpartanFont, RobotoFont } from "@/assets/fonts";
+import Link from "next/link";
+import { FaTwitter, FaFacebook, FaYoutube, FaSearch } from "react-icons/fa";
+
+const Navbar = () => {
+  const navMenu = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Articles", link: "/articles" },
+    { name: "Contact Us", link: "/contact" },
+  ];
+
+  const socialLogos = [
+    { icon: <FaFacebook size={24} />, link: "https://facebook.com" },
+    { icon: <FaTwitter size={24} />, link: "https://twitter.com" },
+    { icon: <FaYoutube size={24} />, link: "https://youtube.com" },
+  ];
+
+  return (
+    <nav className="flex justify-between items-center bg-black/20 px-16 py-7 text-white">
+      {/* Logo/Title text */}
+      <h2 className={`${LeagueSpartanFont.className} font-bold text-xl`}>
+        Runo
+      </h2>
+      <div className="flex items-center justify-around">
+        {/* nav links */}
+        <ul className={`flex gap-6 ${RobotoFont.className} font-medium `}>
+          {navMenu.map((item) => (
+            <li
+              key={item.name}
+              className="hover:underline-[#D4A373] underline-offset-8  cursor-pointer transition-all duration-300"
+            >
+              <Link href={item.link}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+        {/* logos */}
+        <div className="border-r-2 h-6 w-px border-white mx-3" />
+        <div className="flex gap-3">
+          {socialLogos.map((logo, index) => (
+            <Link
+              key={index}
+              href={logo.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" hover:text-gray-400 transition-colors duration-300"
+            >
+              {logo.icon}
+            </Link>
+          ))}
+        </div>
+        <div className="border-r-2 h-6 w-px border-white mx-3" />
+        {/* search button */}
+        <FaSearch
+          size={24}
+          className="hover:text-gray-400 cursor-pointer transition-colors duration-300"
+        />
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
