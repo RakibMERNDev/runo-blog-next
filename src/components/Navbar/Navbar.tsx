@@ -4,7 +4,6 @@ import { FaTwitter, FaFacebook, FaYoutube, FaSearch } from "react-icons/fa";
 import MobileMenuToggle from "./MobileMenuToggle";
 import { Dispatch, SetStateAction } from "react";
 
-
 const Navbar = ({
   isOpen,
   setIsOpen,
@@ -71,8 +70,18 @@ const Navbar = ({
         </button>
       </div>
       {/* mobile menu */}
-      <div>
+      <div className="block md:hidden">
         <MobileMenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+
+        {isOpen && (
+          <ul className="absolute top-3/12 left-1/2 bg-black/20 p-6 rounded-md transform -translate-x-1/2 -translate-y-1/2 mt-2 flex flex-col items-center gap-4">
+            {navMenu.map((item) => (
+              <li key={item.name} className="">
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   );

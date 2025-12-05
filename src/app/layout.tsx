@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${LoraFont.className} container mx-auto`}>
+      <body className={`${LoraFont.className} container mx-auto bg-[#F8F9FA]`}>
         <NavbarWrapper />
         {children}
       </body>
