@@ -1,8 +1,8 @@
 import { LeagueSpartanFont, RobotoFont } from "@/assets/fonts";
 import Link from "next/link";
-import { FaTwitter, FaFacebook, FaYoutube, FaSearch } from "react-icons/fa";
-import MobileMenuToggle from "./MobileMenuToggle";
 import { Dispatch, SetStateAction } from "react";
+import { FaFacebook, FaSearch, FaTwitter, FaYoutube } from "react-icons/fa";
+import MobileMenuToggle from "./MobileMenuToggle";
 
 const Navbar = ({
   isOpen,
