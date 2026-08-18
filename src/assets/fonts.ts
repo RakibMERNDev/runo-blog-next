@@ -1,4 +1,4 @@
-import { Lora, League_Spartan, Roboto } from "next/font/google";
+import { Lora, League_Spartan, Roboto} from "next/font/google";
 
 export const loraFont = Lora({
   weight: ["400", "500", "600", "700"],

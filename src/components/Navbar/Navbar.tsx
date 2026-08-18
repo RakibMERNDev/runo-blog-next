@@ -27,9 +27,11 @@ const Navbar = ({
   return (
     <nav className="fixed left-0 right-0 z-50 flex justify-between items-center bg-black/10 backdrop-blur-md px-3 sm:px-5 md:px-16 py-4 sm:py-7 text-white">
       {/* Logo/Title text */}
-      <h2 className={`${leagueSpartanFont.variable} font-bold text-xl`}>
-        Runo
-      </h2>
+      <Link href={"/"}>
+        <h2 className={`${leagueSpartanFont.variable} font-bold text-xl`}>
+          Runo
+        </h2>
+      </Link>
       <div className="flex items-center justify-around">
         {/* nav links */}
         <ul

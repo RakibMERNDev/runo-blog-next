@@ -1,4 +1,4 @@
-import { loraFont } from "@/assets/fonts";
+import { leagueSpartanFont, loraFont, robotoFont } from "@/assets/fonts";
 import NavbarWrapper from "@/components/Navbar/NavbarWrapper";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${loraFont.variable} bg-[#F8F9FA]`}>
+      <body
+        className={`${loraFont.variable} ${leagueSpartanFont.variable} ${robotoFont.variable} bg-[#F8F9FA]`}
+      >
         <NavbarWrapper />
         {children}
       </body>
