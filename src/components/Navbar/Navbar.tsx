@@ -1,4 +1,4 @@
-import { LeagueSpartanFont, RobotoFont } from "@/assets/fonts";
+import { leagueSpartanFont, robotoFont } from "@/assets/fonts";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 import { FaFacebook, FaSearch, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -25,15 +25,15 @@ const Navbar = ({
   ];
 
   return (
-    <nav className="flex justify-between items-center bg-black/20 px-5 md:px-16 py-7 text-white">
+    <nav className="fixed left-0 right-0 z-50 flex justify-between items-center bg-black/10 backdrop-blur-md px-3 sm:px-5 md:px-16 py-4 sm:py-7 text-white">
       {/* Logo/Title text */}
-      <h2 className={`${LeagueSpartanFont.className} font-bold text-xl`}>
+      <h2 className={`${leagueSpartanFont.variable} font-bold text-xl`}>
         Runo
       </h2>
       <div className="flex items-center justify-around">
         {/* nav links */}
         <ul
-          className={`hidden md:flex gap-6 ${RobotoFont.className} font-medium`}
+          className={`hidden md:flex gap-6 ${robotoFont.variable} font-medium`}
         >
           {navMenu.map((item) => (
             <li

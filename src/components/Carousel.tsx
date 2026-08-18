@@ -1,24 +1,17 @@
 "use client";
 
-// Import Swiper React components
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "./Carousel.css";
 
-// import "./styles.css";
-
-// import required modules
 import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <>
+    <div className="w-full h-100 sm:h-125 md:h-screen relative">
       <Swiper
         pagination={{
           dynamicBullets: true,
@@ -28,7 +21,7 @@ export default function Carousel() {
           disableOnInteraction: false,
         }}
         modules={[Pagination, Autoplay]}
-        className="mySwiper"
+        className="mySwiper w-full h-full"
       >
         <SwiperSlide>
           <Image
@@ -36,6 +29,8 @@ export default function Carousel() {
             alt="slider-image"
             width={1920}
             height={1080}
+            loading="eager"
+            priority
             className="w-full h-full object-cover"
           />
         </SwiperSlide>
@@ -45,6 +40,7 @@ export default function Carousel() {
             alt="slider-image"
             width={1920}
             height={1080}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </SwiperSlide>
@@ -54,10 +50,11 @@ export default function Carousel() {
             alt="slider-image"
             width={1920}
             height={1080}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
