@@ -1,4 +1,4 @@
-import { leagueSpartanFont, loraFont, robotoFont } from "@/assets/fonts";
+import { loraFont } from "@/assets/fonts";
 import NavbarWrapper from "@/components/Navbar/NavbarWrapper";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -14,10 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${loraFont.variable} ${leagueSpartanFont.variable} ${robotoFont.variable} bg-[#F8F9FA]`}
-      >
+    <html lang="en" className={loraFont.className}>
+      <body className=" bg-[#F8F9FA]">
         <NavbarWrapper />
         {children}
       </body>
