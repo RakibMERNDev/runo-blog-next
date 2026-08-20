@@ -131,11 +131,43 @@ function PopularSection() {
   );
 }
 
+function BannerSection() {
+  return (
+    <div className="mt-10 md:mt-12 lg:mt-16 xl:mt-37.5 relative h-150 w-full overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="/banner.png"
+        alt="banner-image"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* Centered Overlay Content */}
+      <div className="max-w-2xl mx-auto px-8 absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+        <span className="bg-white/20 text-white text-sm font-semibold px-2.5 py-1.5 rounded-lg mb-6">
+          FASHION
+        </span>
+        <h1 className="text-2xl md:text-4xl font-bold">
+          Richird Norton photorealistic rendering as real photos
+        </h1>
+        <p className="text-xs mt-4.5 max-w-105">
+          Progressively incentivize cooperative systems through technically
+          sound functionalities. The credibly productivate seamless data.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
+
 export default function Home() {
   return (
     <div>
       <Carousel />
       <PopularSection />
+      <BannerSection />
     </div>
   );
 }
